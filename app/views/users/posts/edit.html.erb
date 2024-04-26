@@ -1,6 +1,6 @@
 <div class="container">
   <h2>アイテム更新</h2>
-  <%= form_with model: @post, url: post_path, method: :patch do |f| %>
+  <%= form_with model: @post, url: post_path(@post), method: :patch do |f| %>
     <div class="form-group">
       <%= f.label :title, 'タイトル' %>
       <%= f.text_field :title, class: "form-control" %>

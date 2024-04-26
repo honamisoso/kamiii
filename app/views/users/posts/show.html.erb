@@ -1,5 +1,6 @@
 <div class="container">
   <h2><%= @post.title %></h2>
+  <%= link_to @post.user.name, user_path(@post.user) %>
 
   <div class="mb-3">
     評価: <span id="evaluation"></span>

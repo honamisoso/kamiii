@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   scope module: :users do
     get '/search', to: 'posts#search'
-    resources :users, only: [:show]
+    resources :users, only: [:show, :edit, :update]
     resources :posts do
       resources :post_comments, only: [:create, :destroy]
     end

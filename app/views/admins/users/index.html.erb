@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>ユーザー一覧</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>メールアドレス</th>
+        <th>名前</th>
+        <th>アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.name %></td>
+          <td>
+            <% unless user.email == 'guest@example.com' %>
+              <%= link_to '削除',
+                          admins_user_path(user),
+                          method: :delete,
+                          data: {confirm: '完全に退会させますが良いですか？'},
+                          class: 'btn btn-sm btn-danger'
+              %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
